@@ -18,3 +18,16 @@ melissa = Pessoa('Melissa Reis', 18, 'Ensino Superior Incompleto', 'Estágiara A
 print(emanuel.apresentar())
 print(Pessoa.apresentar(iara))
 print(Pessoa.apresentar(melissa))
+
+class Produto:
+    def __init__(self, nome, categoria, preco):
+        self.nome = nome
+        self.categoria = categoria
+        self.preco = preco
+
+    def imprimir(self):
+        print('----- DESCRIÇÃO DO PRODUTO -----')
+        print(f'Produto: {self.nome} \nCategoria: {self.categoria} \nPreço: R${str(self.preco)}')
+
+produto1 = Produto('Smartphone', 'Dispositivos Móveis', 1599.90)
+produto1.imprimir()
