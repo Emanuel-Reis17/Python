@@ -1,17 +1,22 @@
+from datetime import datetime
 # Criar a classe
 class Funcionarios:
-    def __init__(self, nome, sobrenome, data_nascimetno):
+    def __init__(self, nome, sobrenome, ano_nascimento):
         self.nome = nome
         self.sobrenome = sobrenome
-        self.data_nascimento = data_nascimetno
+        self.ano_nascimento = ano_nascimento
 
     def nome_completo(self):
         return f'{self.nome} {self.sobrenome}'
 
-# Criar o objeto
-usuario1 = Funcionarios('Emanuel', 'Reis', '00/00/0000')
-usuario2 = Funcionarios('Melissa', 'Reis', '99/99/9999')
-usuario3 = Funcionarios('Iara', 'Reis', '77/77/7777')
+    def idade_funcionario(self):
+        ano_atual = datetime.now().year
+        self.ano_nascimento = int(ano_atual - self.ano_nascimento)
+        return self.ano_nascimento
 
-print(usuario1.nome_completo())
-print(Funcionarios.nome_completo(usuario1))
+# Criar o objeto
+usuario1 = Funcionarios('Emanuel', 'Reis', 2005)
+usuario2 = Funcionarios('Melissa', 'Reis', 2008)
+usuario3 = Funcionarios('Iara', 'Reis', 2012)
+
+print(Funcionarios.idade_funcionario(usuario1))
