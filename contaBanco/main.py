@@ -1,15 +1,4 @@
-from package.conta import Conta
-from package.bancoFunctions import openMenu
-
-def cadastrarConta():
-    print('---------- INICIANDO CADASTRO ----------')
-    banco = str(input('Digite o nome do banco: '))
-    titular = str(input('Digite o nome do titular: '))
-    tipoConta = str(input('Digite o tipo da conta: '))
-    login = str(input('Cadastre um login: '))
-    senha = str(input('Cadastre uma senha: '))
-    print('---------- CONTA CADASTRADA ----------')
-    return Conta(banco, login, senha, titular, tipoConta)
+from package.bancoFunctions import openMenu, cadastrarConta
 
 conta1 = cadastrarConta()
 while True:
