@@ -88,9 +88,11 @@ class Produto:
     def compra(self, comprador, cesta=[], valorTotal=0):
         nomeProduto = str(input('Buscar produto: '))
         for produto in self.produtos:
+
             if nomeProduto in produto['Nome'] or int(nomeProduto) == produto['ID']:
                 print(produto['Nome'] + ': R$' + str(produto['Valor da Venda']))
                 qtd = int(input('Quantos quer levar?: '))
+
                 if 0 < qtd <= produto['Quantidade']:
                     valor = produto['Valor da Venda'] * qtd
                     produto['Quantidade'] -= qtd
@@ -124,30 +126,35 @@ class Produto:
             3: 'Cartão de Débito', 
             4: 'PIX'
         }
-
+        
         print('\n---------- FORMAS DE PAGAMENTO ----------')
         for x, y in formasPagamento.items():
             print(f'[{x}] - {y}')
+
         resposta = int(input('Selecione a Forma de Pagamento: '))
+
         if resposta == 1:
             preco = float(input('Digite o valor passado pelo cliente: R$'))
+
             if preco >= valorTotal:
                 troco = float('{:.2f}'.format(preco - valorTotal))
             else:
                 print('Valor insuficiente!')
                 return False
+            
         venda = {
             'Comprador': comprador, 
             'Produtos': [x[0] for x in cesta], 
             'Valor': f'R${str(valorTotal)}',
             'Troco': f'R${str(troco)}', 
             'Data da Compra': dataAtual()
-        }       
+        }      
+
         self.vendas.append(venda)
 
         print('\n---------- COMPRA REALIZADA ----------')
         for produto in cesta:
-            print(f'Produto: {produto[0]}     | Quantidade: {produto[1]}     | Preço Total: {produto[2]}')
+            print(f'Comprador: {comprador} \nProduto: {produto[0]}     | Quantidade: {produto[1]}     | Preço Total: {produto[2]}')
         print(f'Forma de pagamento selecionado: {formasPagamento.get(resposta)} \nTotal: R${str(valorTotal)} Troco: R${str(troco)} \nMuito Obrigado, volte sempre! \n')
 
     def relatorioVendas(self):
