@@ -18,7 +18,7 @@ def openMenu(conta=False, produtos=False):
             produtos.imprimirProdutos() if produtos else print('Não há produtos cadastrados.')
             openMenu(conta, produtos)
         elif resposta == 5:
-            if conta:
+            if conta and produtos:
                 comprador = conta.buscarCliente(str(input('Digite o CPF do comprador: ')))
                 Produto.compra(produtos, comprador)
             else:
@@ -35,11 +35,13 @@ def openMenu(conta=False, produtos=False):
         openMenu(conta, produtos)
 
 def cadastrarCliente():
+    # global idCliente
     nome = str(input('Digite o nome do cliente: '))
     endereco = str(input('Digite o endereço do cliente: '))
-    telefone = str(input('Digite o telefone do cliente: '))
-    cpf = str(input('Digite o CPF do cliente: '))
+    telefone = int(input('Digite o telefone do cliente: '))
+    cpf = int(input('Digite o CPF do cliente (Não use pontos "." e traços "-"): '))
     dataNascimento = str(input('Digite a data de nascimento do cliente: '))
+    # idCliente += 1
     print('Cliente Cadastrado')
     return Cliente(nome, endereco, telefone, cpf, dataNascimento)
 

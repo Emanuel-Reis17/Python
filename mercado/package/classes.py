@@ -2,6 +2,9 @@ import datetime
 
 data = datetime.datetime.now()
 
+idCliente = 0
+idProduto = 0
+
 def dataAtual():
     data = datetime.datetime.now()
     return f'{data.strftime("%X")} | {data.date()}'
@@ -9,19 +12,24 @@ def dataAtual():
 class Cliente:
     clientes = []
     def __init__(self, nome, endereco, telefone, cpf, dataNascimento):
+        global idCliente
+        idCliente += 1
         cliente = {
-            'Nome': nome, 
+            'ID': idCliente, 
+            'Nome': nome.upper(), 
+            'Idade': self.calcIdade(dataNascimento), 
             'Endereço': endereco, 
             'Telefone': telefone, 
             'CPF': cpf, 
-            'Data de Nascimento': self.calcIdade(dataNascimento)
+            'Data de Nascimento': dataNascimento, 
+            'Status': self.aprovacaoCliente(dataNascimento)
         }
         self.clientes.append(cliente)
 
     def calcIdade(self, x):
         ano = x.split('/')
         ano = int(ano[-1])
-        return True if data.year - ano >= 18 else False
+        return data.year - ano
     
     def exibirClientes(self):
         print('\n---------- LISTA DE CLIENTES ----------')
@@ -32,15 +40,23 @@ class Cliente:
     
     def buscarCliente(self, cpf):
         for cliente in self.clientes:
-            if cpf in cliente['CPF']:
+            if cpf == cliente['CPF']:
                 return cliente['Nome']
+    
+    def aprovacaoCliente(self, data):
+        idade = self.calcIdade(data)
+        return 'Aprovado' if idade >= 18 else 'Negado'
 
 class Produto:
     produtos = []
     vendas = []
+
     def __init__(self, nome, valorCompra, validade, quantidade, estoqueMin, estoqueMax):
-        try: 
+        try:
+            global idProduto
+            idProduto += 1
             produto = {
+                'ID': idProduto, 
                 'Nome': nome, 
                 'Valor da Compra': f'R${float(valorCompra)}',
                 'Valor da Venda': self.calcImposto(valorCompra),
@@ -56,11 +72,11 @@ class Produto:
         
     def calcImposto(self, valor):
         porcentagem = lambda x, y: (y/100) * x
-        impostos = [3, 5, 0.2]
-        valorLucro = valor + porcentagem(valor, 15)
-        for imposto in impostos:
-            valorLucro += porcentagem(valorLucro, imposto)
-        return valorLucro
+        acrescimos = [15, 5, 3, 0.2]
+        for imposto in acrescimos:
+            valor += porcentagem(valor, imposto)
+        valorFinal = float('{:.2f}'.format(valor))
+        return valorFinal
         
     def imprimirProdutos(self):
         print('\n---------- LISTA DE PRODUTOS ----------')
@@ -72,15 +88,13 @@ class Produto:
     def compra(self, comprador, cesta=[], valorTotal=0):
         nomeProduto = str(input('Buscar produto: '))
         for produto in self.produtos:
-
-            if nomeProduto in produto['Nome']:
+            if nomeProduto in produto['Nome'] or int(nomeProduto) == produto['ID']:
                 print(produto['Nome'] + ': R$' + str(produto['Valor da Venda']))
                 qtd = int(input('Quantos quer levar?: '))
-
                 if 0 < qtd <= produto['Quantidade']:
                     valor = produto['Valor da Venda'] * qtd
                     produto['Quantidade'] -= qtd
-                    valorTotal += valor
+                    valorTotal += float('{:.2f}'.format(valor))
                     cesta.append([produto['Nome'], qtd, 'R$' + str(valor)])
                     print('Produto Adicionado na Cesta')
                     print([x for x in cesta])
@@ -103,6 +117,7 @@ class Produto:
             return False
        
     def checkout(self, comprador, cesta, valorTotal):
+        troco = 0.0
         formasPagamento = {
             1: 'Dinheiro', 
             2: 'Cartão de Crédito', 
@@ -110,23 +125,30 @@ class Produto:
             4: 'PIX'
         }
 
-        venda = {
-            'Comprador': comprador, 
-            'Produtos': [x[0] for x in cesta], 
-            'Valor': f'R${str(valorTotal)}', 
-            'Data da Compra': dataAtual()
-        }
-
         print('\n---------- FORMAS DE PAGAMENTO ----------')
         for x, y in formasPagamento.items():
             print(f'[{x}] - {y}')
         resposta = int(input('Selecione a Forma de Pagamento: '))
+        if resposta == 1:
+            preco = float(input('Digite o valor passado pelo cliente: R$'))
+            if preco >= valorTotal:
+                troco = float('{:.2f}'.format(preco - valorTotal))
+            else:
+                print('Valor insuficiente!')
+                return False
+        venda = {
+            'Comprador': comprador, 
+            'Produtos': [x[0] for x in cesta], 
+            'Valor': f'R${str(valorTotal)}',
+            'Troco': f'R${str(troco)}', 
+            'Data da Compra': dataAtual()
+        }       
         self.vendas.append(venda)
 
         print('\n---------- COMPRA REALIZADA ----------')
         for produto in cesta:
-            print(f'Produto: {produto[0]}     | Quantidade: {produto[1]}     | Preço: {produto[2]}')
-        print(f'Forma de pagamento selecionado: {formasPagamento.get(resposta)} \nTotal: R${str(valorTotal)} \nMuito Obrigado, volte sempre! \n')
+            print(f'Produto: {produto[0]}     | Quantidade: {produto[1]}     | Preço Total: {produto[2]}')
+        print(f'Forma de pagamento selecionado: {formasPagamento.get(resposta)} \nTotal: R${str(valorTotal)} Troco: R${str(troco)} \nMuito Obrigado, volte sempre! \n')
 
     def relatorioVendas(self):
         print('\n---------- RELATÓRIO DE VENDAS ----------')
