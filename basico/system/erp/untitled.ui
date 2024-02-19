@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>904</width>
+    <height>250</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>110</y>
+      <width>171</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/logo_empresa/icons/logo_empresa.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_cliente">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon_cliente/icons/cliente.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/icon_cliente/icons/cliente.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_fornecedor">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>0</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon_fornecedor/icons/fornecedor.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/icon_fornecedor/icons/fornecedor.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_produtos">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>0</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon_produtos/icons/produtos.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/icon_produtos/icons/produtos.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_vendas">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>0</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon_cliente/icons/cliente.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/icon_vendas/icons/venda.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_pagar">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>0</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon_cliente/icons/cliente.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/icon_pagar/icons/contasPagar.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_bancs">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>0</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon_cliente/icons/cliente.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/icon_bancos/icons/banco.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_receber">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>0</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon_cliente/icons/cliente.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/icon_receber/icons/receber.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_sair">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>0</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon_cliente/icons/cliente.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/icon_sair/icons/sair.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_caixa">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>0</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon_cliente/icons/cliente.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/icon_caixa/icons/caixa.png)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>904</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCadastros">
+    <property name="title">
+     <string>Cadastros</string>
+    </property>
+    <addaction name="actionCliente"/>
+    <addaction name="actionFornecedor"/>
+    <addaction name="actionUsu_rios"/>
+   </widget>
+   <widget class="QMenu" name="menuOpera_es">
+    <property name="title">
+     <string>Operações</string>
+    </property>
+    <widget class="QMenu" name="menuSa_da_de_Produtos">
+     <property name="title">
+      <string>Saída de Produtos</string>
+     </property>
+     <addaction name="actionVenda"/>
+     <addaction name="actionConsumo_de_Produtos"/>
+    </widget>
+    <widget class="QMenu" name="menuCompras">
+     <property name="title">
+      <string>Compras</string>
+     </property>
+     <addaction name="actionCompras_2"/>
+     <addaction name="actionPedidos"/>
+     <addaction name="actionCancelar"/>
+    </widget>
+    <addaction name="menuSa_da_de_Produtos"/>
+    <addaction name="actionEstoque"/>
+    <addaction name="menuCompras"/>
+   </widget>
+   <widget class="QMenu" name="menuFinanceiro">
+    <property name="title">
+     <string>Financeiro</string>
+    </property>
+    <addaction name="actionCaixa"/>
+    <addaction name="actionContas_de_Banco"/>
+    <addaction name="actionContas_a_pagar"/>
+    <addaction name="actionContas_pagas"/>
+    <addaction name="actionContas_receber"/>
+    <addaction name="actionContas_recebidas"/>
+   </widget>
+   <widget class="QMenu" name="menuConsultas">
+    <property name="title">
+     <string>Consultas</string>
+    </property>
+    <widget class="QMenu" name="menuVendas">
+     <property name="title">
+      <string>Vendas</string>
+     </property>
+     <addaction name="actionGeral"/>
+     <addaction name="actionResumido"/>
+    </widget>
+    <widget class="QMenu" name="menuConsumos">
+     <property name="title">
+      <string>Consumos</string>
+     </property>
+     <addaction name="actionGeral_2"/>
+     <addaction name="actionResumido_2"/>
+    </widget>
+    <addaction name="menuVendas"/>
+    <addaction name="menuConsumos"/>
+   </widget>
+   <addaction name="menuCadastros"/>
+   <addaction name="menuOpera_es"/>
+   <addaction name="menuFinanceiro"/>
+   <addaction name="menuConsultas"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionCliente">
+   <property name="text">
+    <string>Cliente</string>
+   </property>
+  </action>
+  <action name="actionFornecedor">
+   <property name="text">
+    <string>Fornecedor</string>
+   </property>
+  </action>
+  <action name="actionUsu_rios">
+   <property name="text">
+    <string>Usuários</string>
+   </property>
+  </action>
+  <action name="actionEstoque">
+   <property name="text">
+    <string>Estoque</string>
+   </property>
+  </action>
+  <action name="actionVenda">
+   <property name="text">
+    <string>Venda</string>
+   </property>
+  </action>
+  <action name="actionConsumo_de_Produtos">
+   <property name="text">
+    <string>Consumo de Produtos</string>
+   </property>
+  </action>
+  <action name="actionCompras_2">
+   <property name="text">
+    <string>Comprar</string>
+   </property>
+  </action>
+  <action name="actionPedidos">
+   <property name="text">
+    <string>Pedidos</string>
+   </property>
+  </action>
+  <action name="actionCancelar">
+   <property name="text">
+    <string>Cancelar</string>
+   </property>
+  </action>
+  <action name="actionCaixa">
+   <property name="text">
+    <string>Caixa</string>
+   </property>
+  </action>
+  <action name="actionContas_de_Banco">
+   <property name="text">
+    <string>Contas de Banco</string>
+   </property>
+  </action>
+  <action name="actionContas_a_pagar">
+   <property name="text">
+    <string>Contas a pagar</string>
+   </property>
+  </action>
+  <action name="actionContas_pagas">
+   <property name="text">
+    <string>Contas pagas</string>
+   </property>
+  </action>
+  <action name="actionContas_receber">
+   <property name="text">
+    <string>Contas receber</string>
+   </property>
+  </action>
+  <action name="actionContas_recebidas">
+   <property name="text">
+    <string>Contas recebidas</string>
+   </property>
+  </action>
+  <action name="actionGeral">
+   <property name="text">
+    <string>Geral</string>
+   </property>
+  </action>
+  <action name="actionResumido">
+   <property name="text">
+    <string>Resumido</string>
+   </property>
+  </action>
+  <action name="actionGeral_2">
+   <property name="text">
+    <string>Geral</string>
+   </property>
+  </action>
+  <action name="actionResumido_2">
+   <property name="text">
+    <string>Resumido</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="logo_empresa.qrc"/>
+  <include location="icon_sair.qrc"/>
+  <include location="icon_vendas.qrc"/>
+  <include location="icon_pagar.qrc"/>
+  <include location="icon_bancos.qrc"/>
+  <include location="icon_receber.qrc"/>
+  <include location="icon_produtos.qrc"/>
+  <include location="icon_caixa.qrc"/>
+  <include location="icon_fornecedor.qrc"/>
+  <include location="icon_cliente.qrc"/>
+ </resources>
+ <connections/>
+</ui>
